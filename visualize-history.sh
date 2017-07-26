@@ -18,7 +18,7 @@ while true; do
 
   # clear terminal buffer completely (as opposed to "clear" command)
   tput reset
-  printf "[%s] History visualization:\n\n" "$(date)"
+  printf "[%s] History visualization:\n\n" "$(date +%H:%M:%S)"
   # less allows disabling line wrapping (as opposed to "cat")
   less -SXE "$OUTPUT"
   sleep 0.2
