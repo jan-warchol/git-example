@@ -1,7 +1,9 @@
 #!/bin/sh
 # `watch` command doesn't work with colored git log - use shell loop
 
-COMMAND='git log --oneline --decorate --graph --color --branches --remotes'
+TARGET=${1:-"--branches --remotes"}
+
+COMMAND="git log --oneline --decorate --graph --color $TARGET"
 OUTPUT="/tmp/git-log-output`pwd`"
 mkdir -p `dirname "$OUTPUT"`
 
