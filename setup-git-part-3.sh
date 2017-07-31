@@ -10,5 +10,6 @@ for dev in Alice Bob; do
   git clone server $dev
   cd $dev
   git config user.name "$dev"
+  git config user.email "$dev@example.com"
   cd ..
 done
