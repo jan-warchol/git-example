@@ -1,12 +1,14 @@
-mkdir ../exercise-1
-cd ../exercise-1
+# make sure we run this from inside example repo
+cd $(dirname "$0")
 
-git clone https://github.com/jan-warchol/git-example.git --bare central
-git clone central alice
-git clone central bob
+mkdir ../git-1.3-exercise-1
+cd ../git-1.3-exercise-1
 
-cd alice
-git config user.name "Alice"
-cd ../bob
-git config user.name "Bob"
+git clone https://github.com/jan-warchol/git-example.git --bare server
 
+for dev in Alice Bob; do
+  git clone server $dev
+  cd $dev
+  git config user.name "$dev"
+  cd ..
+done
